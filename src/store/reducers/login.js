@@ -1,20 +1,17 @@
-//bikin case kalo dia success
-import  { LOGIN_SUCCESS, LOGIN_FAILED } from '../actions/types';
-// //
+import { LOGIN_SUCCESS, LOGIN_FAILED } from "../actions/types";
+
 const initialState = {
-	token: localStorage.getItem('token'),
+	token: localStorage.getItem("access_token"),
 	error: null,
-	isAuthenticate: false,
+	isAuthenticate: false
 }
 
-//create reducer nya. we need state parameters
-const login = (state = initialState, action) => {
-	switch(action.type) {
+const auth = (state = initialState, action) => {
+	switch (action.type) {
 		default:
-			return{
+			return {
 				...state
 			}
-		//tinggal di cek
 		case LOGIN_SUCCESS:
 			return {
 				...state,
@@ -24,10 +21,9 @@ const login = (state = initialState, action) => {
 			return {
 				...state,
 				isAuthenticate: false,
-				//kalo gagal kita remove local storage
-				token: localStorage.removeItem('token')
+				token: localStorage.removeItem("access_token")
 			}
-		}
+	}
 }
 
-export default login;
+export default auth;

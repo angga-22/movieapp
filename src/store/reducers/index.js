@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-//panggil state di index reducer
-import login from './login';
-
+import { combineReducers } from "redux";
+import login from "./login";
+// import todos from "./todos";
 
 export default combineReducers({
 	login
-})
+	// todos
+});
