@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 //panggil state di index reducer
-import login from './login';
+import auth from './authentication';
 
 
 export default combineReducers({
-	login
+	auth
 })
