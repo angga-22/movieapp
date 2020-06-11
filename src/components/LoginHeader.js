@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Avatar } from 'antd';
-import { AudioOutlined, YoutubeFilled } from '@ant-design/icons';
+import { AudioOutlined } from '@ant-design/icons';
 import '../styles/header/loginheader.scss';
 
 const LoginHeader = () => {

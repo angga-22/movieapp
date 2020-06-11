@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Input } from 'antd';
-import { AudioOutlined, YoutubeFilled } from '@ant-design/icons';
+import { AudioOutlined } from '@ant-design/icons';
 import '../styles/header/mainheader.scss';
 
 export default () => {
