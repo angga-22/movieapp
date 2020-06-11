@@ -4,7 +4,7 @@ import { Input } from 'antd';
 import { AudioOutlined, YoutubeFilled } from '@ant-design/icons';
 import '../styles/header/mainheader.scss';
 
-const MainHeader = () => {
+export default () => {
     const { Search } = Input;
 
     const suffix = (
@@ -19,8 +19,9 @@ const MainHeader = () => {
     return (
         <header className="main-header">
             <div className="main-header__icon">
-                <a> <YoutubeFilled style={{ fontSize: '100px', color: '#FE024E' }} />
-                    <h5>Milan TV</h5>
+                <a>
+                    <img src="/images/logo.png" style={{ width: '100px' }} />
+                    <h5>Wooden Chocolate</h5>
                 </a>
             </div >
             <div className="main-header__search">
@@ -41,4 +42,3 @@ const MainHeader = () => {
     )
 }
 
-export default MainHeader;

@@ -17,9 +17,10 @@ const LoginHeader = () => {
 
     return (
         <header className="login-header">
-            <div className="login-header__icon">
-                <a> <YoutubeFilled style={{ fontSize: '100px', color: '#FE024E' }} />
-                    <h5>Milan TV</h5>
+            <div className="main-header__icon">
+                <a>
+                    <img src="/images/logo.png" style={{ width: '100px' }} />
+                    <h5>Wooden Chocolate</h5>
                 </a>
             </div >
             <div className="login-header__search">
