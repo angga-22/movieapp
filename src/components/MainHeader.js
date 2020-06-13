@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Input } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import '../styles/header/mainheader.scss';
+import '../assets/styles/header/mainheader.scss';
 
 export default () => {
     const { Search } = Input;
@@ -20,7 +20,7 @@ export default () => {
         <header className="main-header">
             <div className="main-header__icon">
                 <a>
-                    <img src="/images/logo.png" style={{ width: '100px' }} />
+                    <img src="/images/logo.png" style={{ width: '120px' }} />
                     <h5>Wooden Chocolate</h5>
                 </a>
             </div >
@@ -28,7 +28,7 @@ export default () => {
                 <Search
                     placeholder="search movie"
                     onSearch={value => console.log(value)}
-                    style={{ width: 800 }}
+                    style={{ width: 600 }}
                 />
             </div>
             <div className="main-header__signup">

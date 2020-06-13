@@ -1,7 +1,7 @@
 import React from 'react';
 //we used hooks so we need 
 import { useDispatch } from 'react-redux';
-import '../style/footer.scss';
+import '../assets/styles/footer/footer.scss';
 import {
 	FacebookOutlined,
 	InstagramOutlined,
@@ -9,7 +9,7 @@ import {
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import MobileStoreButton from 'react-mobile-store-button';
-import images from '../style/images/logo.png'
+import images from '../assets/images/logo.png';
 
 const Footer = () => {
 	const dispatch = useDispatch()

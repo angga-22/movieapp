@@ -2,6 +2,7 @@ import React from 'react';
 import MainHeader from '../MainHeader';
 import MovieSlide from '../MovieSlide';
 import MovieList from './MovieList';
+import Footer from '../Footer';
 
 export default () => {
 
@@ -13,6 +14,7 @@ export default () => {
             <div>
                 <h1>actions</h1>
             </div>
+            <Footer />
         </>
     )
 }

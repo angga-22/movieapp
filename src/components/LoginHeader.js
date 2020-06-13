@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Avatar } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
-import '../styles/header/loginheader.scss';
+import '../assets/styles/header/loginheader.scss';
 
 const LoginHeader = () => {
     const { Search } = Input;
@@ -19,7 +19,7 @@ const LoginHeader = () => {
         <header className="login-header">
             <div className="main-header__icon">
                 <a>
-                    <img src="/images/logo.png" style={{ width: '100px' }} />
+                    <img src="/images/logo.png" style={{ width: '120px' }} />
                     <h5>Wooden Chocolate</h5>
                 </a>
             </div >
@@ -27,7 +27,7 @@ const LoginHeader = () => {
                 <Search
                     placeholder="search movie"
                     onSearch={value => console.log(value)}
-                    style={{ width: 800 }}
+                    style={{ width: 600 }}
                 />
             </div>
             <div className="login-header__avatar">
