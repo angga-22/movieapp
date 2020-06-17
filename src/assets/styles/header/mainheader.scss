@@ -40,3 +40,18 @@
         }
     }
 }
+.avatar{
+    float:right;
+    font-size: 30px;
+    margin-top: 20px;
+    a{
+        display: flex;
+        h3{
+            color:#f2dfd0;
+            font-size: 18px; 
+            margin-right: 70px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    }
+}

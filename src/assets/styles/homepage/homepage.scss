@@ -29,8 +29,12 @@
 .movie-list{
     padding: 20px 90px;
     background: url( http://api.thumbr.it/whitenoise-361x370.png?background=ebb284ff&noise=3d393d&density=27&opacity=18  );  
-    &__title{
-        text-align: left;
+    &__title h1{
+        text-align: center;
+        font-weight: 400;
+        font-size: 35px;
+        font-family: sans-serif;
+        color:#432A1C;
     }
     &__movie{
         margin: 20px 30px;

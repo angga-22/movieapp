@@ -15,7 +15,8 @@ const auth = (state = initialState, action) => {
 		case LOGIN_SUCCESS:
 			return {
 				...state,
-				isAuthenticate: true
+				isAuthenticate: true,
+				userProfile: action.payload
 			}
 		case LOGIN_FAILED:
 			return {

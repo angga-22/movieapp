@@ -1,35 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Input } from 'antd';
+import { Input, Avatar } from 'antd';
 import { AudioOutlined, UserOutlined, LockOutlined } from '@ant-design/icons';
-import { login } from "../store/actions/authentication";
+import { searchMovie } from '../store/actions/movies';
+import useModal from './modal/useModal';
+import Modal from './modal/Modal';
 import '../assets/styles/header/mainheader.scss';
+
 
 export default (props) => {
     const { Search } = Input;
-    // const { isShowing, toggle } = useModal();
-    // const [login, setLogin] = useState(false);
-    // const dispatch = useDispatch()
-    // const [email, setEmail] = useState("")
-    // const [password, setPassword] = useState("")
-    // const isAuthenticate = useSelector(state => state.auth.isAuthenticate)
+    const [title, setTitle] = useState("")
+    const [search, setSearch] = useState("")
+    const searchData = useSelector(state => state.movies.result)
+    //
+    const isAuthenticate = useSelector(state => state.auth.isAuthenticate)
+    const { isShowing, toggle } = useModal();
+    const dispatch = useDispatch()
 
-    // const handleSubmit = (e) => {
-    //     setLogin(false);
-    //     e.preventDefault();
-    //     const userData = {
-    //         email,
-    //         password
-    //     }
-    //     dispatch(login(userData))
-    //     props.history.push("/login")true
-    // }
+    const onChange = e => {
+        setSearch(e.target.value)
+    }
+    const onSearch = async () => {
+        search === "" ? alert("again?") : dispatch(searchMovie(search))
+    }
+    //userprofile
+    const [userData, setUserData] = useState({
+        name: localStorage.getItem("name")
+    })
+    useEffect(() => {
+        if (isAuthenticate) {
+            setUserData({
+                name: localStorage.getItem("name")
+            })
+        }
+    }, [isAuthenticate])
 
     const suffix = (
         <AudioOutlined
             style={{
                 fontSize: 16,
                 color: '#1890ff',
+                textAlign: 'right'
             }}
         />
     );
@@ -45,53 +57,30 @@ export default (props) => {
                 <div className="main-header__search">
                     <Search
                         placeholder="search movie"
-                        onSearch={value => console.log(value)}
+                        onSearch={onSearch}
+                        onChange={e => setSearch(e.target.value)}
+                        value={search}
                         style={{ width: 600 }}
                     />
                 </div>
+
+                {isAuthenticate ?
+                    (
+                        <div className="avatar">
+                            <a><Avatar size={50} src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                                <h3>Welcome back</h3>
+                            </a>
+                        </div>
+                    ) :
+                    <div className="homepage-modal">
+                        <button className="button-default" onClick={toggle}>SIGN IN</button>
+                    </div>
+                }
+                <Modal
+                    isShowing={isShowing}
+                    hide={toggle}
+                />
             </header>
-            {/* <Modal open={login} onClose={onCloseModal}>
-                <div className="modal-body">
-                    <h2>Login and Get <span>Started</span></h2>
-                    <span className="subtitle">Just fill in the form below</span>
-                    <form className="contact-form form-validate4" novalidate="novalidate">
-                        <div className="form-group">
-                            <input
-                                className="form-control"
-                                type="email"
-                                name="email"
-                                placeholder="E-mail"
-                                required=""
-                                autocomplete="off"
-                                aria-required="true"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="password"
-                                name="pass"
-                                className="form-control"
-                                placeholder="Password"
-                                required=""
-                                autocomplete="off"
-                                aria-required="true"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                        <button
-                            className="btn btn-md btn-primary btn-center"
-                            id="login_btn"
-                        // onClick={handleSubmit}
-                        >
-                            LOG IN
-                        </button>
-                    </form>
-                </div>
-            </Modal> */}
         </>
     )
 }
-
