@@ -37,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "git@gitlab.com:chlaudya_m/movie-app-project.git",
+  "author": "Chlaudya Mamuaya <mamuaya.chlaudya@gmail.com>",
+  "license": "MIT"
 }
