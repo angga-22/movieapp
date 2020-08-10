@@ -1,13 +1,15 @@
 import React from 'react';
 //we used hooks so we need 
 import { useDispatch } from 'react-redux';
-import '../../src/styles/footer/footer.scss';
-import { YoutubeOutlined } from '@ant-design/icons';
+import '../assets/styles/footer/footer.scss';
+import {
+	FacebookOutlined,
+	InstagramOutlined,
+	LinkedinOutlined
+} from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import MobileStoreButton from 'react-mobile-store-button';
-import { SocialMediaIconsReact } from 'social-media-icons-react';
-
-
+import images from '../assets/images/logo.png';
 
 const Footer = () => {
 	const dispatch = useDispatch()
@@ -18,8 +20,8 @@ const Footer = () => {
 			<div className='footer'>
 
 				<div className='footer__footer-left'>
-					<YoutubeOutlined className='youtube' style={{ color: 'red' }} />
-					<h1 className='title'>Milan TV</h1>
+					<img src={images} alt='' className='images' />
+					<h1 className='title'>Wooden Chocolate</h1>
 					<p className='description'>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit
 						Accusamus ipsum autem, recusandae nesciunt laboriosam
@@ -30,11 +32,11 @@ const Footer = () => {
 
 				<div className='footer__footer-middle'>
 					<ul className='list'>
-						<li><Link to='/'>Tentang Kami</Link></li>
-						<li><Link to='/'>Blog</Link></li>
-						<li><Link to='/'>Layanan</Link></li>
-						<li><Link to='/'>Karir</Link></li>
-						<li><Link to='/'>Pusat Media</Link></li>
+						<li><Link to='/' style={{ color: '#f2dfd0' }}>Tentang Kami</Link></li>
+						<li><Link to='/' style={{ color: '#f2dfd0' }}>Blog</Link></li>
+						<li><Link to='/' style={{ color: '#f2dfd0' }}>Layanan</Link></li>
+						<li><Link to='/' style={{ color: '#f2dfd0' }}>Karir</Link></li>
+						<li><Link to='/' style={{ color: '#f2dfd0' }}>Pusat Media</Link></li>
 					</ul>
 				</div>
 
@@ -42,21 +44,22 @@ const Footer = () => {
 					<h3 className='title'> Download </h3>
 					<div className='store'>
 						<MobileStoreButton
-							store='android' className='store-list' />
+							store='android' className='android' />
 						<MobileStoreButton
-							store='ios' className='store-list' />
+							store='ios' className='ios' />
 					</div>
 					<h5 className='title'> Social Media </h5>
 					<div className='sosmed-list'>
-						<SocialMediaIconsReact icon='facebook' className='sosmed' />
-						<SocialMediaIconsReact icon='pinterest' />
-						<SocialMediaIconsReact icon='instagram' />
+						<FacebookOutlined className='sosmed' />
+						<InstagramOutlined className='sosmed' />
+						<LinkedinOutlined className='sosmed' />
 					</div>
 				</div>
 
 			</div>
+
 			<div>
-				<p className='copyright'> Copyright &Copy 2000-202 MilanTV. All Rights Reserved </p>
+				<p className='copyright'> Copyright &Copy 2020-202 Wooden Chocolate. All Rights Reserved </p>
 			</div>
 
 		</footer>

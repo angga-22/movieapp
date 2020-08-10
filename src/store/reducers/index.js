@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import login from "./login";
-// import todos from "./todos";
+import movies from "./movies";
+import auth from "./authentication";
+import getmoviedet from "./getmoviedet";
+
 
 export default combineReducers({
-	login
-	// todos
+	auth, movies, getmoviedet
 });

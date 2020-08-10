@@ -1,0 +1,151 @@
+.movie-slider{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-top: 5px solid #915f42;
+    box-sizing: border-box;
+    background: rgba($color: #432A1C, $alpha: 0.9);
+    &__poster{
+        display: inline-block;
+        position: relative;   
+    }
+    &__poster::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4); 
+    }
+    img{
+        min-width:100%;
+        height: 500px;
+        object-fit: cover;
+    }
+}
+
+.movie-list{
+    padding: 20px 90px;
+    background: url( http://api.thumbr.it/whitenoise-361x370.png?background=ebb284ff&noise=3d393d&density=27&opacity=18  );  
+    &__title h1{
+        text-align: center;
+        font-weight: 400;
+        font-size: 35px;
+        font-family: sans-serif;
+        color:#432A1C;
+    }
+    &__movie{
+        margin: 20px 30px;
+        &__card{
+            width: 20%;
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            float: left;
+            text-align: center;
+            line-height: 0rem;
+            margin-bottom:30px ;
+            img{
+                object-fit: cover;
+                width:100%;
+                height: 320px;
+                background: linear-gradient(rgb(240, 200, 128) , white);
+                box-shadow: 0 4px 8px 0 rgba(68, 67, 66, 0.719);
+                border-radius: 10px;
+                padding: 12px;
+            }
+            img:hover{
+                cursor: pointer;
+                transform: scaleY(1.025);
+                box-shadow: 0 6px 30px rgba(87, 88, 100, 0.4);
+                transition: all .4s;
+            }
+            h1{
+                font-size: 17px;
+                margin-top: 15px;
+                line-height: 15px;
+                color:#432A1C;
+                font-family: sans-serif;
+            }
+        }
+        
+    }
+
+}
+.homepage-modal{
+    margin: 0 auto;
+    position: absolute;
+    z-index: 200;
+    left: 1110px;
+    top: 30px;
+}
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .5;
+  }
+  
+  .modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+  
+  .modal {
+    z-index: 100;
+    background: white;
+    position: relative;
+    margin: 2rem auto;
+    border-radius: 3px;
+    max-width: 500px;
+    padding: 2rem;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modal-close-button {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    opacity: .3;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 10px;
+    left:450px;
+  }
+  
+  button {
+    font-size: 30px;
+    font-weight: 700;
+    border: none;
+    margin-right: 90px;
+    cursor: pointer;
+  }
+  button:hover{
+    color: rgb(216, 156, 83);
+  }
+  .button-default {
+    background: none;
+    width: 150px;
+    text-align: left;
+    color: rgb(247, 227, 204);
+  }

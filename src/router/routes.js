@@ -1,14 +1,24 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { Layout } from 'antd';
 import { Route } from "react-router-dom";
+import Homepage from "../views/Homepage";
+import Moviedetail from "../views/Moviedetail";
 import MainHeader from "../components/MainHeader";
-import LoginHeader from "../components/LoginHeader";
-
-const Routes = () => {
+import Footer from "../components/Footer";
+export default () => {
     return (
-        <Fragment>
-            <Route path="/" exact component={MainHeader} />
-            <Route path="/login" exact component={LoginHeader} />
-        </Fragment>
+        <><Layout>
+            <header >
+                <MainHeader />
+            </header>
+            <div>
+                <Route path="/" exact component={Homepage} />
+                <Route path="/:id" exact component={Moviedetail} />
+            </div>
+            <footer>
+                <Footer />
+            </footer>
+        </Layout>
+        </>
     )
 }
-export default Routes;
